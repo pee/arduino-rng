@@ -4,7 +4,8 @@
 /*  v1.0                        */
 /*  4/20/2009                   */
 //
-// -pee 06/13/2014
+// -pee 06/13/2014 - update a bit
+// -pee 04/21/2015 - fixes, BS
 //
 //
 /********************************/
@@ -56,9 +57,13 @@ void loop(){
 
   // 10 bit adc value
   int adc_value = analogRead(adc_pin);
+  
+  //byte adc_value = analogRead(adc_pin);
+  //Serial.print(adc_value);
 
   Sha256.print(adc_value);
   printHash(Sha256.result());
+  
   //processInput(adc_value, threshold);
 
 }
